@@ -1,0 +1,345 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  overflow-y: scroll;
+  padding: 0;
+}
+
+header {
+  background: hsla(172, 100, 90, 1);
+  box-sizing: border-box;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem 1.5rem 6rem;
+  width: 100%;
+
+  h2 {
+    text-align: center;
+  }
+
+  .cta {
+    font-size: 24px;
+    text-align: center;
+  }
+}
+
+main {
+  margin: -5rem auto 2rem;
+  max-width: 800px;
+  width: 90%;
+}
+
+footer {
+  background: #000;
+  border-radius: 20px;
+  bottom: 20px;
+  box-shadow: 0 4px 10px hsla(172, 100, 90, 0.4);
+  box-sizing: border-box;
+  color: #fff;
+  display: inline-block;
+  font-size: 14px;
+  padding: 10px 15px;
+  position: fixed;
+  right: 20px;
+  text-align: center;
+
+  a {
+    color: #fff;
+
+    &:hover {
+      color: hsla(172, 100, 90, 1);
+    }
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  clear: both;
+  display: block;
+  margin: 1.5rem 0;
+}
+
+.info-box {
+  background: #fff;
+  border-radius: 1rem;
+  border: 1px solid #eeeeee;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  display: none;
+  margin: 2rem 0;
+  overflow: hidden;
+  padding: 0;
+
+  h2 {
+    color: #f44336;
+  }
+
+  h3 {
+    margin: 1.5rem 1.5rem 0;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  &.default {
+    text-align: center;
+    padding: 1.5rem;
+  }
+}
+
+.description {
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 0;
+  padding: 0.5rem 1.5rem;
+  width: 100%;
+
+  p {
+    display: block;
+    float: left;
+    margin-right: 1.5rem;
+    position: relative;
+    width: calc(100% - 100px - 1.5rem);
+  }
+
+  a {
+    background: #f44336;
+    border-radius: 26px;
+    border: 2px solid #eeeeee;
+    box-sizing: border-box;
+    color: #fff;
+    display: inline-block;
+    float: left;
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 16px;
+    margin: 1rem 0;
+    padding: 12px 18px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    width: 100px;
+
+    &:hover {
+      background: #ef5350;
+    }
+
+    &::after {
+      content: "→";
+      padding-left: 10px;
+    }
+  }
+}
+
+.show {
+  display: block;
+}
+
+/*--------------------------------------
+
+Prism colour-highlighting, taken from:
+https://codepen.io/2kool2/pen/MEbeEg
+
+--------------------------------------*/
+::selection {
+  color: #000;
+  background: #b2d3ff;
+  text-shadow: none;
+}
+figure {
+  position: relative;
+}
+pre[class*="language-"] {
+  overflow: auto;
+  margin: 0;
+  padding: 1rem 1.5rem;
+  position: relative;
+  transition: box-shadow 0.3s ease-out;
+}
+code[class*="language-"] {
+  font-family: monospace, monospace;
+  letter-spacing: 0.01em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.2rem;
+  hyphens: none;
+}
+pre > code[class*="language-"],
+pre[class*="language-"] > code {
+  display: block;
+  padding: 0.75rem 0;
+  text-overflow: ellipsis;
+  overflow-x: auto;
+}
+pre:focus-within > code[class*="language-"],
+pre:hover > code[class*="language-"] {
+  outline: 0;
+  text-overflow: inherit;
+}
+:not(pre) > code[class*="language-"] {
+  font-size: inherit;
+  padding: 0.125em 0.25em;
+  white-space: normal;
+  word-wrap: nowrap;
+}
+.token.bold,
+.token.important {
+  font-weight: 700;
+}
+.token.italic {
+  font-style: italic;
+}
+.token.entity {
+  cursor: help;
+}
+.namespace {
+  opacity: 0.7;
+}
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  --color: #000;
+  --textShadow: #fff;
+  --comment: #7a7a7a;
+  --punctuation: #6e6e6e;
+  --property: #905;
+  --operator: #70b;
+  --selector: #487b00;
+  --url: #8d6640;
+  --urlBg: hsla(0, 0%, 100%, 0.5);
+  --boolean: #905;
+  --atrule: #0075a8;
+  --keyword: #0075a8;
+  --function: #c93654;
+  --regex: #860;
+  --boxShadow: hsla(0, 0%, 0%, 0.3);
+  --focusOutline: hsla(214, 100%, 85%, 1);
+  --codeBg: #fffef5;
+  background-color: var(--codeBg);
+}
+@media (prefers-color-scheme: dark) {
+  body:not([data-lightMode="light"])
+    code[class*="language-"]:not([contenteditable]),
+  body:not([data-lightMode="light"]) pre[class*="language-"] {
+    --color: #f8f8f2;
+    --textShadow: #000;
+    --comment: #8d9dad;
+    --punctuation: #9b9b9b;
+    --property: #e60;
+    --operator: #c5f;
+    --selector: #8b2;
+    --url: #f8f8f2;
+    --urlBg: hsla(0, 0%, 0%, 0.5);
+    --boolean: #b083ff;
+    --atrule: #f4e97b;
+    --keyword: #66d9ef;
+    --function: #f4e97b;
+    --regex: #fd971f;
+    --boxShadow: #000;
+    --focusOutline: hsla(214, 100%, 85%, 0.6);
+    --codeBg: #2b2d2f;
+  }
+}
+body[data-lightMode="dark"] code[class*="language-"]:not([contenteditable]),
+body[data-lightMode="dark"] pre[class*="language-"] {
+  --color: #f8f8f2;
+  --textShadow: #000;
+  --comment: #8d9dad;
+  --punctuation: #9b9b9b;
+  --property: #e60;
+  --operator: #c5f;
+  --selector: #8b2;
+  --url: #f8f8f2;
+  --urlBg: hsla(0, 0%, 0%, 0.5);
+  --boolean: #b083ff;
+  --atrule: #f4e97b;
+  --keyword: #66d9ef;
+  --function: #f4e97b;
+  --regex: #fd971f;
+  --boxShadow: #000;
+  --focusOutline: hsla(214, 100%, 85%, 0.6);
+  --codeBg: #fffef5;
+}
+code[class*="language-"],
+pre[class*="language-"] {
+  color: var(--color);
+  text-shadow: 0 1px var(--textShadow);
+}
+pre[class*="language-"]:focus-within,
+pre[class*="language-"]:hover {
+  box-shadow: 0 0.25rem 0.25rem var(--boxShadow);
+}
+pre[class*="language-"]:focus-within {
+  outline-offset: calc(-0.25rem - 1px);
+  outline: solid var(--focusOutline);
+  z-index: 5;
+}
+.token.cdata,
+.token.comment,
+.token.doctype,
+.token.prolog {
+  color: var(--comment);
+}
+.token.punctuation {
+  color: var(--punctuation);
+}
+.token.constant,
+.token.deleted,
+.token.property,
+.token.symbol,
+.token.tag {
+  color: var(--property);
+}
+.token.boolean,
+.token.number {
+  color: var(--boolean);
+}
+.token.attr-name,
+.token.builtin,
+.token.char,
+.token.inserted,
+.token.selector,
+.token.string {
+  color: var(--selector);
+}
+.token.operator {
+  color: var(--operator);
+}
+.language-css .token.string,
+.style .token.string,
+.token.entity,
+.token.url {
+  color: var(--url);
+  background-color: var(--urlBg);
+}
+.token.atrule,
+.token.attr-value {
+  color: var(--atrule);
+}
+.token.keyword {
+  color: var(--keyword);
+}
+.token.function {
+  color: var(--function);
+}
+.token.important,
+.token.regex,
+.token.variable {
+  color: var(--regex);
+}
+@media print {
+  code[class*="language-"],
+  pre[class*="language-"] {
+    text-shadow: none;
+  }
+}

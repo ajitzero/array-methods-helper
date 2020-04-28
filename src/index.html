@@ -1,0 +1,215 @@
+<header>
+  <h2>What do you want from your <code>Array</code>?</h2>
+
+  <div class="cta">
+    <label for="want">I want... </label>
+    <select id="want">
+      <option value="nothing">Select an option</option>
+      <option value="find-findIndex">a particular element</option>
+      <option value="map-filter-concat">another array</option>
+      <option value="join-reduce">a string</option>
+      <option value="every-some-includes-reduce">a boolean</option>
+      <option value="forEach">to do some other action</option>
+    </select>
+  </div>
+</header>
+
+<main>
+
+  <div id="info-nothing" class="info-box default show">
+    <h2>You need to select at least one option.</h2>
+    <h4>None of the methods provided here mutate the original array.</h4>
+    <h5>These methods aren't included here:</h5>
+    <ul>
+      <li><code>Array.prototype.flat()</code></li>
+      <li><code>Array.prototype.flatMap()</code></li>
+      <li><code>Array.prototype.reduceRight()</code></li>
+      <li><code>Array.prototype.slice()</code></li>
+      <li><code>Array.prototype.toString()</code></li>
+    </ul>
+  </div>
+
+  <div id="info-map" class="info-box">
+    <h3><code>Array.prototype.map()</code></h3>
+
+    <div class="description">
+      <p>If you're looking for another array with all elements of the original array being modified by some function, then you should use the <code>.map()</code> method.</p>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank">MDN</a>
+    </div>
+
+    <pre><code class="language-js">// pass a function to map
+const result = ['Cat', 'Griffin', 'Wolf'].map(x => 'School of ' + x);
+console.log(result);
+// Output: Array ['School of Cat', 'School of Griffin', 'School of Wolf']</code></pre>
+  </div>
+
+  <div id="info-filter" class="info-box">
+    <h3><code>Array.prototype.filter()</code></h3>
+
+    <div class="description">
+      <p>If you're looking for all elements which match a condition, then you should use the <code>.filter()</code> method.</p>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter" target="_blank">MDN</a>
+    </div>
+
+    <pre><code class="language-js">// pass a function to filter
+const words = ['witcher', 'hunter', 'king', 'guard'];
+const allMatches = words.filter(x => x.length < 6);
+console.log(allMatches);
+// Output: Array ['king', 'guard']</code></pre>
+  </div>
+
+  <div id="info-concat" class="info-box">
+    <h3><code>Array.prototype.concat()</code></h3>
+
+    <div class="description">
+      <p>If you're looking to merge multiple arrays without changing the original arrays, then you should use the <code>.concat()</code> method.</p>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat" target="_blank">MDN</a>
+    </div>
+
+    <pre><code class="language-js">const heroes = ['Geralt', 'Vesemir'].concat(['Ciri', 'Yennefer']);
+console.log(heroes);
+// Output: Array ['Geralt', 'Vesemir', 'Ciri', 'Yennefer']</code></pre>
+  </div>
+
+  <div id="info-find" class="info-box">
+    <h3><code>Array.prototype.find()</code></h3>
+
+    <div class="description">
+      <p>If you're looking for the first element which matches a condition from a given array, then you should use the <code>.find()</code> method.</p>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find" target="_blank">MDN</a>
+    </div>
+
+    <pre><code class="language-js">// pass a function to find
+const words = ['witcher', 'hunter', 'king', 'guard'];
+const firstMatch = words.find(x => x.length < 6);
+console.log(firstMatch);
+// Output: String 'king'</code></pre>
+  </div>
+
+  <div id="info-findIndex" class="info-box">
+    <h3><code>Array.prototype.findIndex()</code></h3>
+
+    <div class="description">
+      <p>If you're looking for the index of the first element which matches a condition from a given array, then you should use the <code>.findIndex()</code> method.</p>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex" target="_blank">MDN</a>
+    </div>
+
+    <pre><code class="language-js">// pass a function to findIndex
+const words = ['witcher', 'hunter', 'king', 'guard'];
+const firstMatch = words.findIndex(x => x.length < 6);
+console.log(firstMatch);
+// Output: 2</code></pre>
+  </div>
+
+  <div id="info-join" class="info-box">
+    <h3><code>Array.prototype.join()</code></h3>
+
+    <div class="description">
+      <p>If you're looking to combine all array elements (with something separating them or not), then you should use the <code>.join()</code> method.</p>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join" target="_blank">MDN</a>
+    </div>
+
+    <pre><code class="language-js">const result = ['Toss', 'a', 'coin'].join(' '));
+console.log(result);
+// Output: String 'Toss a coin'</code></pre>
+  </div>
+
+  <div id="info-every" class="info-box">
+    <h3><code>Array.prototype.every()</code></h3>
+
+    <div class="description">
+      <p>If you're checking whether every element from a given array matches a certain condition, then you should use the <code>.every()</code> method.</p>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every" target="_blank">MDN</a>
+    </div>
+
+    <pre><code class="language-js">// pass a function to every
+const words = ['witcher', 'hunter', 'king', 'guard'];
+const lessThan10 = words.every(x => x.length < 10);
+console.log(lessThan10);
+// Output: true
+
+const greaterThan10 = words.every(x => x.length > 10);
+console.log(greaterThan10);
+// Output: false</code></pre>
+  </div>
+
+  <div id="info-some" class="info-box">
+    <h3><code>Array.prototype.some()</code></h3>
+
+    <div class="description">
+      <p>If you're checking whether at least one element from a given array matches a certain condition, then you should use the <code>.some()</code> method.</p>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some" target="_blank">MDN</a>
+    </div>
+
+    <pre><code class="language-js">// pass a function to some
+const words = ['witcher', 'hunter', 'king', 'guard'];
+const anyLessThan6 = words.some(x => x.length < 6);
+console.log(anyLessThan6);
+// Output: true
+
+const anyGreaterThan10 = words.some(x => x.length > 10);
+console.log(anyGreaterThan10);
+// Output: false</code></pre>
+  </div>
+
+  <div id="info-includes" class="info-box">
+    <h3><code>Array.prototype.includes()</code></h3>
+
+    <div class="description">
+      <p>If you're checking whether a certain element exists in the given array, then you should use the <code>.includes()</code> method.</p>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes" target="_blank">MDN</a>
+    </div>
+
+    <pre><code class="language-js">const witchers = ['Geralt', 'Ciri', 'Vesemir'];
+
+const isCiriAWitcher = witchers.includes('Ciri');
+console.log(isCiriAWitcher);
+// Output: true
+
+const isYenneferAWitcher = words.includes('Yennefer');
+console.log(isYenneferAWitcher);
+// Output: false</code></pre>
+  </div>
+
+  <div id="info-forEach" class="info-box">
+    <h3><code>Array.prototype.forEach()</code></h3>
+
+    <div class="description">
+      <p>If you're looking to perform some operation(s) on every element from a given array, then you should use the <code>.forEach()</code> method.</p>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach" target="_blank">MDN</a>
+    </div>
+
+    <pre><code class="language-js">['Geralt', 'Vesemir', 'Ciri'].forEach(x => {
+    console.log(x + ', the Witcher');
+});
+
+// Output:
+// Geralt, the Witcher
+// Vesemi, the Witcher
+// Ciri, the Witcher</code></pre>
+  </div>
+
+  <div id="info-reduce" class="info-box">
+    <h3><code>Array.prototype.reduce()</code></h3>
+
+    <div class="description">
+      <p>If you're looking to calculate a single value from array elements, then you should use the <code>.reduce()</code> method.</p>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce" target="_blank">MDN</a>
+    </div>
+
+    <pre><code class="language-js">// This example is for numbers, but it works for strings as well.
+const numbers = [1, 2, 3, 4];
+const reducerFunction = (inventory, loot) => inventory + loot;
+
+const saddleBag = numbers.reduce(reducerFunction);
+console.log(saddleBag); // Output: 10
+
+const existingLoot = 50;
+const stash = numbers.reduce(reducerFunction, existingLoot);
+console.log(stash); // Output: 60</code></pre>
+  </div>
+</main>
+
+<footer>
+  Built &amp; written by <a href="https://ajitpanigrahi.com" target="_blank">Ajit Panigrahi</a> 👉 <a href="https://twitter.com/AjitZero" target="_blank">Twitter</a> &times; <a href="https://github.com/AjitZero/array-methods-helper" target="_blank">GitHub</a>
+</footer>
