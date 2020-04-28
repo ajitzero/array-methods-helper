@@ -47,6 +47,13 @@ footer a:hover {
   color: #ccfff8;
 }
 
+@media (max-width: 768px) {
+  footer {
+    width: 90%;
+    right: 5%;
+  }
+}
+
 h1,
 h2,
 h3,
