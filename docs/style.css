@@ -20,8 +20,42 @@ header .cta {
   text-align: center;
 }
 
+header select {
+  display: inline-block;
+  color: #444;
+  padding: 0.5rem 1rem;
+  width: auto;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  border: none;
+  border-bottom: 4px solid #00806f;
+  appearance: none;
+  border-radius: 0;
+  text-align: center;
+  background-color: transparent;
+  transition: border-color 0.5s ease-in-out;
+}
+
+header select::-ms-expand {
+  display: none;
+}
+
+header select:hover {
+  border-color: #00b39b;
+}
+
+header select:focus {
+  color: #222;
+  outline: none;
+}
+
+header select option {
+  font-weight: normal;
+}
+
 main {
-  margin: -5rem auto 2rem;
+  margin: -5rem auto 5.5rem;
   max-width: 800px;
   width: 90%;
 }
@@ -81,6 +115,7 @@ h6 {
 }
 .info-box h3 {
   margin: 1.5rem 1.5rem 0;
+  word-break: break-word;
 }
 .info-box ul {
   list-style-type: none;
@@ -162,7 +197,7 @@ pre[class*="language-"] {
 }
 
 code[class*="language-"] {
-  font-family: monospace, monospace;
+  font-family: monospace;
   letter-spacing: 0.01em;
   text-align: left;
   white-space: pre;
@@ -221,14 +256,14 @@ pre[class*="language-"] {
   --operator: #70b;
   --selector: #487b00;
   --url: #8d6640;
-  --urlBg: hsla(0, 0%, 100%, 0.5);
+  --urlBg: rgba(255, 255, 255, 0.5);
   --boolean: #905;
   --atrule: #0075a8;
   --keyword: #0075a8;
   --function: #c93654;
   --regex: #860;
-  --boxShadow: hsla(0, 0%, 0%, 0.3);
-  --focusOutline: hsla(214, 100%, 85%, 1);
+  --boxShadow: rgba(0, 0, 0, 0.3);
+  --focusOutline: #b3d4ff;
   --codeBg: #fffef5;
   background-color: var(--codeBg);
 }
@@ -245,14 +280,14 @@ pre[class*="language-"] {
     --operator: #c5f;
     --selector: #8b2;
     --url: #f8f8f2;
-    --urlBg: hsla(0, 0%, 0%, 0.5);
+    --urlBg: rgba(0, 0, 0, 0.5);
     --boolean: #b083ff;
     --atrule: #f4e97b;
     --keyword: #66d9ef;
     --function: #f4e97b;
     --regex: #fd971f;
     --boxShadow: #000;
-    --focusOutline: hsla(214, 100%, 85%, 0.6);
+    --focusOutline: rgba(179, 212, 255, 0.6);
     --codeBg: #2b2d2f;
   }
 }
@@ -266,14 +301,14 @@ body[data-lightMode="dark"] pre[class*="language-"] {
   --operator: #c5f;
   --selector: #8b2;
   --url: #f8f8f2;
-  --urlBg: hsla(0, 0%, 0%, 0.5);
+  --urlBg: rgba(0, 0, 0, 0.5);
   --boolean: #b083ff;
   --atrule: #f4e97b;
   --keyword: #66d9ef;
   --function: #f4e97b;
   --regex: #fd971f;
   --boxShadow: #000;
-  --focusOutline: hsla(214, 100%, 85%, 0.6);
+  --focusOutline: rgba(179, 212, 255, 0.6);
   --codeBg: #fffef5;
 }
 
